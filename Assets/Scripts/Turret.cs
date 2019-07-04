@@ -3,13 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Turret : MonoBehaviour {
-
+    //Aiming variables
     private Transform target;
+    [Header("Attributes")]
     public float range = 15f;
+    public float rotationSpeed = 10f;
+    //Shooting variables
+    public float fireRate = 1f;
+    private float fireCountdown = 0f;
+
+    [Header("Unity Setup Field")]
     public string enemyTag = "Enemy";
     public Transform rotator;
-    public float rotationSpeed = 10f;
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+    
 
+    
 	// Use this for initialization
 	void Start () {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);  		
@@ -23,6 +33,14 @@ public class Turret : MonoBehaviour {
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         Vector3 rotation = Quaternion.Lerp(rotator.rotation, lookRotation, Time.deltaTime * rotationSpeed).eulerAngles;
         rotator.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+
+        if(fireCountdown <= 0f)
+        {
+            Shoot();
+            fireCountdown = 1f / fireRate;
+        }
+
+        fireCountdown -= Time.deltaTime;
 	}
 
     void UpdateTarget()
@@ -49,5 +67,13 @@ public class Turret : MonoBehaviour {
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    void Shoot()
+    {
+        GameObject bulletObject = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Bullet bullet = bulletObject.GetComponent<Bullet>();
+
+        if (bullet != null) bullet.Seek(target);
     }
 }
