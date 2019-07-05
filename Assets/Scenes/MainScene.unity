@@ -4255,6 +4255,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4186919921028730, guid: 649951df8fd200d4b97ad5baef75ba20,
     type: 2}
   m_PrefabInternal: {fileID: 597817730}
+--- !u!1 &617134996 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1889545178600626, guid: 90d559386aaf22e43b76fb488fda80cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1711473533}
 --- !u!1001 &619158805
 Prefab:
   m_ObjectHideFlags: 0
@@ -12977,6 +12982,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1933187844}
   - component: {fileID: 1933187843}
+  - component: {fileID: 1933187845}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -13012,6 +13018,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1933187845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1933187842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba448aca7721df24ea819094bc5647b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardTurretToBuild: {fileID: 617134996}
 --- !u!1001 &1933665178
 Prefab:
   m_ObjectHideFlags: 0
