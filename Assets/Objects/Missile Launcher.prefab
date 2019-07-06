@@ -262,5 +262,6 @@ MonoBehaviour:
   fireRate: 0.5
   enemyTag: Enemy
   rotator: {fileID: 4761114721748542}
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 1549675175474596, guid: c22e907b5f1b4c24496438aec74d61e2,
+    type: 2}
   firePoint: {fileID: 4715056411947396}

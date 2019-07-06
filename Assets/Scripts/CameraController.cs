@@ -3,7 +3,7 @@
 public class CameraController : MonoBehaviour {
     [Header("Camera Activation")]
     public bool cameraActive = true;
-    //Panning(Moving the camera in the horizontal axis)
+    //Panning(Moving the camera in the horizontal axis) //TODO: Fix Clamping when the camera is zoom in
     [Header("Camera Movement.")]
     public float panSpeed = 30f;
     public float panBorderThickness = 10f;
