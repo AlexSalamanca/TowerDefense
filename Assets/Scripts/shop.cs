@@ -1,18 +1,22 @@
 ﻿using UnityEngine;
 //TODO: Improve the shop interface
 public class shop : MonoBehaviour {
+
+    public TurretBlueprint standardTurret;
+    public TurretBlueprint missileTurret;
+
     BuildManager buildManager;
 
     void Start()
     {
         buildManager = BuildManager.instance;
     }
-    public void PurchaseStandardTurret()
+    public void SelectStandardTurret()
     {
-        buildManager.SetTurretToBuild(buildManager.standardTurretToBuild);
+        buildManager.SelectTurretToBuild(standardTurret);
     }
-    public void PurchaseMissileTurret()
+    public void SelectMissileTurret()
     {
-        buildManager.SetTurretToBuild(buildManager.missilesTurretToBuild);
+        buildManager.SelectTurretToBuild(missileTurret);
     }
 }
