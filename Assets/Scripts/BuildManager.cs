@@ -4,8 +4,6 @@ public class BuildManager : MonoBehaviour {
 
     public static BuildManager instance;
     private TurretBlueprint turretToBuild;
-    public GameObject standardTurretToBuild;
-    public GameObject missilesTurretToBuild;
     public GameObject buildEffect;
 
     void Awake()
