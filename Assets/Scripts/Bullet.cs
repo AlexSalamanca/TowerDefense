@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour {
     public float speed = 70f;
     public float explosionRadius = 0f;
     public GameObject impactEffect;
+    public int damage = 50;
 
 	// Update is called once per frame
 	void Update () {
@@ -49,7 +50,10 @@ public class Bullet : MonoBehaviour {
 
     void Damage(Transform enemy)
     {
-        Destroy(enemy.gameObject);
+        EnemyMovement e = enemy.GetComponent<EnemyMovement>();
+
+        if(e != null)   e.DamageTaken(damage);
+        else   return;
     }
 
     void Explode()
@@ -69,4 +73,6 @@ public class Bullet : MonoBehaviour {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
+
+    
 }
